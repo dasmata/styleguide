@@ -1,3 +1,7 @@
 .idea
 .idea/*
 .next
+node_modules/
+styleguide/components/
+styleguide/nav.json
+yarn-error.log

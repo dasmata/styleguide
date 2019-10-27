@@ -1,0 +1,67 @@
+$textColor: #bdb8b7;
+$menuButtonWidth: 1.5em;
+$menuBarHeight: 0.25em;
+$menuBarSpace: 0.15em;
+@mixin topBarPos($nr){
+  top: (($menuBarSpace + $menuBarHeight) * $nr);
+}
+@mixin button(){
+  background: transparent;
+  border: 0;
+  padding: 0;
+  margin: 0;
+  display: inline;
+}
+
+
+#header-menu{
+  background: #361c1a;
+  color: $textColor;
+  padding: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  #hamburger-menu {
+    @include button();
+    position: relative;
+    height: 1em;
+
+    &:focus{
+      outline: 0;
+    }
+
+    div {
+      @include topBarPos(1);
+      background: $textColor;
+      width: $menuButtonWidth;
+      height: $menuBarHeight;
+      position: absolute;
+      left: -$menuButtonWidth;
+    }
+
+    &:before {
+      content: '';
+      position: absolute;
+      left: -$menuButtonWidth;
+      top: 0;
+      width: $menuButtonWidth;
+      background: $textColor;
+      height: $menuBarHeight;
+    }
+
+    &:after {
+      @include topBarPos(2);
+      content: '';
+      position: absolute;
+      left: -$menuButtonWidth;
+      width: $menuButtonWidth;
+      background: $textColor;
+      height: $menuBarHeight;
+    }
+  }
+}
+
+button {
+  @include button();
+}

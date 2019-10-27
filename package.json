@@ -1,0 +1,55 @@
+{
+  "name": "styleguide",
+  "version": "0.0.1-beta",
+  "description": "styleguide template",
+  "main": "index.js",
+  "author": "Tiberiu Popovici <tibi.popovici@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "@babel/core": "^7.6.4",
+    "@babel/preset-env": "^7.6.3",
+    "@babel/preset-react": "^7.6.3",
+    "@zeit/next-sass": "^1.0.1",
+    "babel-eslint": "^10.0.3",
+    "express": "^4.17.1",
+    "gulp": "^4.0.2",
+    "gulp-concat": "^2.6.1",
+    "gulp-file": "^0.4.0",
+    "gulp-util": "^3.0.8",
+    "icon-font-generator": "^2.1.10",
+    "next": "^9.1.1",
+    "node-sass": "^4.12.0",
+    "prop-types": "^15.7.2",
+    "react": "^16.10.2",
+    "react-dom": "^16.10.2",
+    "through2": "^3.0.1"
+  },
+  "scripts": {
+    "dev": "gulp dev",
+    "build": "next build",
+    "start": "next start",
+    "lint:js": "eslint ./pages/**/* --fix",
+    "lint:css": "stylelint",
+    "test": "jest"
+  },
+  "devDependencies": {
+    "babel-jest": "^24.9.0",
+    "enzyme": "^3.10.0",
+    "enzyme-adapter-react-16": "^1.15.1",
+    "eslint": "^6.5.1",
+    "eslint-config-airbnb": "^18.0.1",
+    "eslint-plugin-compat": "^3.3.0",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-jest": "^22.21.0",
+    "eslint-plugin-jsdoc": "^15.12.0",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-react": "^7.16.0",
+    "eslint-plugin-react-hooks": "^1.7.0",
+    "jest": "^24.9.0",
+    "stylelint": "^11.1.1",
+    "stylelint-scss": "^3.11.1"
+  },
+  "jest": {
+    "setupTestFrameworkScriptFile": "./setupJest.js"
+  }
+}
