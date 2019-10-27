@@ -12,6 +12,14 @@ const RenderedComponent = ({ type, name, variant }) => (
   </div>
 );
 
+RenderedComponent.defaultProps = {
+  variant: {
+    metadata: {
+      name: null
+    }
+  }
+};
+
 RenderedComponent.propTypes = {
   type: PropTypes.string,
   name: PropTypes.string,

@@ -1,4 +1,5 @@
 $textColor: #bdb8b7;
+$backgroundColor: #361c1a;
 $menuButtonWidth: 1.5em;
 $menuBarHeight: 0.25em;
 $menuBarSpace: 0.15em;
@@ -13,51 +14,73 @@ $menuBarSpace: 0.15em;
   display: inline;
 }
 
+.navigation {
 
-#header-menu{
-  background: #361c1a;
-  color: $textColor;
-  padding: 15px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  &__menu {
+    background: $backgroundColor;
+    color: $textColor;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 
-  #hamburger-menu {
-    @include button();
-    position: relative;
-    height: 1em;
+    &__hamburger {
+      @include button();
+      position: relative;
+      height: 1em;
 
-    &:focus{
-      outline: 0;
+      &:focus{
+        outline: 0;
+      }
+
+      &-topbar {
+        @include topBarPos(1);
+        background: $textColor;
+        width: $menuButtonWidth;
+        height: $menuBarHeight;
+        position: absolute;
+        left: -$menuButtonWidth;
+      }
+
+      &:before {
+        content: '';
+        position: absolute;
+        left: -$menuButtonWidth;
+        top: 0;
+        width: $menuButtonWidth;
+        background: $textColor;
+        height: $menuBarHeight;
+      }
+
+      &:after {
+        @include topBarPos(2);
+        content: '';
+        position: absolute;
+        left: -$menuButtonWidth;
+        width: $menuButtonWidth;
+        background: $textColor;
+        height: $menuBarHeight;
+      }
+    }
+  }
+
+  &__components {
+    background: $backgroundColor;
+    color: $textColor;
+
+    &__list {
+      margin: 0 5px;
+      padding: 0;
+      list-style-type: none;
+      display: flex;
+      font-size: 16px;
     }
 
-    div {
-      @include topBarPos(1);
-      background: $textColor;
-      width: $menuButtonWidth;
-      height: $menuBarHeight;
-      position: absolute;
-      left: -$menuButtonWidth;
-    }
+    &__menusection {
 
-    &:before {
-      content: '';
-      position: absolute;
-      left: -$menuButtonWidth;
-      top: 0;
-      width: $menuButtonWidth;
-      background: $textColor;
-      height: $menuBarHeight;
-    }
-
-    &:after {
-      @include topBarPos(2);
-      content: '';
-      position: absolute;
-      left: -$menuButtonWidth;
-      width: $menuButtonWidth;
-      background: $textColor;
-      height: $menuBarHeight;
+      &__title{
+        margin: 0;
+      }
     }
   }
 }

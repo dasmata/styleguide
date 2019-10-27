@@ -5,9 +5,11 @@ import navConfig from '../styleguide/nav.json';
 
 import '../css/styleguide_layout.scss';
 
+const prefix = 'layout';
+
 const Layout = ({ children, openedNav }) => (
-  <div>
-    <Header menuElements={navConfig} opened={openedNav} />
+  <div className={prefix}>
+    <Header className={`${prefix}__header`} menuElements={navConfig} opened={openedNav} />
     { children }
   </div>
 );
