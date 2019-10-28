@@ -56,7 +56,9 @@ const createModuleConfig = () => through.obj((entry, enc, cb) => {
 const reduceMenu = (categories) => through.obj((entry, enc, cb) => {
   categories[entry.category.basename] = categories[entry.category.basename] || [];
   categories[entry.category.basename].push({
-    label: entry.component.basename,
+    label: entry.component.basename.split('-')
+      .map((el) => `${el[0].toUpperCase()}${el.slice(1)}`)
+      .join(' '),
     action: `/component?type=${entry.category.basename}&name=${entry.component.basename}`,
   });
   cb(null, entry);

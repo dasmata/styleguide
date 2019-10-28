@@ -1,0 +1,11 @@
+{
+    "metadata": {
+        "name": "Text input",
+        "description": ""
+    },
+    "moduleConfig": {
+        "type": "text",
+        "placeholder": "Input placeholder",
+        "errors": []
+    }
+}

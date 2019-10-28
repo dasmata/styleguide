@@ -1,0 +1,9 @@
+{
+    "metadata": {
+        "name": "Simple Button",
+        "description": "Simple button, no icons"
+    },
+    "moduleConfig" : {
+        "text": "Button"
+    }
+}

@@ -6,9 +6,10 @@ import '../../../css/styleguide_nav.scss';
 
 const prefix = 'navigation';
 
-const MenuItem = ({ label, action }) => (
-  <li>
+const MenuItem = ({ label, action, className }) => (
+  <li className={className}>
     <button
+      className={`${className}__element`}
       type="button"
       onClick={(e) => {
         e.preventDefault();
@@ -28,7 +29,7 @@ const MenuSection = ({ name, items, className }) => (
   <li className={CX({ [`${className}__element`]: className })}>
     <h3 className={CX({ [`${className}__title`]: className })}>{name}</h3>
     <ul className={CX({ [`${className}__list`]: className })}>
-      {items.map((el, idx) => <MenuItem key={`menu-section-${idx}`} label={el.label} action={el.action} />)}
+      {items.map((el, idx) => <MenuItem className={`${className}__item`} key={`menu-section-${idx}`} label={el.label} action={el.action} />)}
     </ul>
   </li>
 );
@@ -55,7 +56,7 @@ const Nav = ({ menuElements, opened, className }) => {
       <section className={`${prefix}__components`}>
         {openState && (
           <div>
-            <ul className={`${prefix}__components__list`}>
+            <ul className={`${prefix}__components__menusection`}>
               {Object.keys(menuElements)
                 .map((name) => (
                   <MenuSection
@@ -78,7 +79,8 @@ const menuItem = {
   action: PropTypes.oneOfType([
     PropTypes.string,
     PropTypes.func
-  ]).isRequired
+  ]).isRequired,
+  className: PropTypes.string
 };
 
 const menuItems = PropTypes.arrayOf(PropTypes.shape(menuItem));

@@ -1,0 +1,14 @@
+{
+    "metadata": {
+        "name": "Header Search Bar",
+        "description": "tbd"
+    },
+    "moduleConfig": {
+        "button": {
+            "text": "Fetch!"
+        },
+        "input": {
+            "placeholder": "Search everything!!!"
+        }
+    }
+}

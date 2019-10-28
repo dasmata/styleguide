@@ -12,6 +12,7 @@ $menuBarSpace: 0.15em;
   padding: 0;
   margin: 0;
   display: inline;
+  cursor: pointer;
 }
 
 .navigation {
@@ -68,23 +69,47 @@ $menuBarSpace: 0.15em;
     background: $backgroundColor;
     color: $textColor;
 
-    &__list {
+    &__menusection {
       margin: 0 5px;
       padding: 0;
       list-style-type: none;
       display: flex;
-      font-size: 16px;
-    }
+      justify-content: center;
+      height: 100%;
 
-    &__menusection {
+      &__element {
+        width: 200px;
+        border-style: dotted;
+        border-color: $textColor;
+        border-width: 0 1px;
+        padding: 5px;
+      }
 
       &__title{
         margin: 0;
+        text-transform: uppercase;
+      }
+
+      &__list {
+        margin: 0;
+        padding: 0;
+        list-style-type: none;
+      }
+
+      &__item {
+        padding: 5px;
+
+        &__element {
+          color: $textColor;
+          font-weight: 600;
+        }
       }
     }
   }
+
+  button {
+    @include button();
+  }
 }
 
-button {
-  @include button();
-}
+

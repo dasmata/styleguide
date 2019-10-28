@@ -1,0 +1,8 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Input atom snapshot tests renders text input [no errors] 1`] = `
+<input
+  placeholder="Input placeholder"
+  type="text"
+/>
+`;
