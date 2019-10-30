@@ -1,0 +1,9 @@
+.a-input {
+  border-width: 0 0 1px 0;
+  border-color: black;
+  padding: 10px 5px;
+
+  &:focus {
+    outline: none;
+  }
+}

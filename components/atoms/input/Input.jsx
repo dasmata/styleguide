@@ -1,22 +1,38 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
+import CX from 'classnames';
 
-const Input = ({
-  placeholder,
-  errors,
-  type,
-  className,
-  onBlur,
-  onChange,
-  onKeyUp
-}) => {
-  const attributes = {
+import './input.scss';
+
+const prefix = 'a-input';
+
+const Input = (
+  {
+    placeholder,
+    errors,
     type,
     className,
-    placeholder,
     onBlur,
     onChange,
-    onKeyUp
+    onKeyUp,
+  }
+) => {
+  const [value, setValue] = useState('');
+  useEffect(() => {
+    if (typeof onChange === 'function') {
+      onChange(value);
+    }
+  }, [value]);
+  const attributes = {
+    type,
+    className: CX([prefix, { [className]: className }]),
+    placeholder,
+    onBlur,
+    onChange: (e) => {
+      setValue(e.target.value);
+    },
+    onKeyUp,
+    value
   };
 
   return (

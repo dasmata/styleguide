@@ -2,7 +2,10 @@
 
 exports[`Input atom snapshot tests renders text input [no errors] 1`] = `
 <input
+  className="a-input"
+  onChange={[Function]}
   placeholder="Input placeholder"
   type="text"
+  value=""
 />
 `;

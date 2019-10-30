@@ -5,6 +5,7 @@ exports[`Input atom snapshot tests renders text input [no errors] 1`] = `
   className="m-search"
 >
   <Input
+    onChange={[Function]}
     placeholder="Search everything!!!"
     type="text"
   />
